@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./public/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    justify-content: space-between;
+    min-height: 314px;
+}
+
+.title,
+.quotes {
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.title {
+    font-family: "Montez";
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.quotes {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35%;
+    min-height: 164px;
+}
+
+.quotes__content {
+    color: black;
+    font-family: "Montez";
+    font-size: 25px;
+    display: flex;
+    align-self: flex-start;
+}
+
+.quotes__author {
+    color: rgb(226, 151, 78);
+    font-size: 20px;
+    font-family: inherit;
+    display: flex;
+    align-self: flex-end;
+}
+
+.generate-button {
+    background-color: black;
+    font-family: inherit;
+    border-width: 0;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+    transition-duration: 0.6s;
+    transition-property: background-color;
+}
+
+.generate-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.loading-quotes{
+    display: none;
+    border-radius: 10px;
+    background-color: white;
+    width: 35%;
+    min-height: 164px;
+}
+
+.loading-quotes__div::after{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 50px auto;
+    border: 2px solid black;
+    border-top-color: gray;
+    border-radius: 100%;
+    animation: loading-spinner 1s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes loading-spinner {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
