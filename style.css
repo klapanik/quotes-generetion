@@ -8,6 +8,8 @@ body {
     background-image: url(./public/background.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
 
 .container {
@@ -119,4 +121,51 @@ body {
     }
 }
 
-@media (max-width: 100px) {}
+@media (max-width: 1000px) {
+    .quotes{
+        width: 51%;
+    }
+}
+
+@media (max-width: 760px) {
+    .quotes{
+        width: 65%;
+    }
+}
+
+@media (max-width: 580px) {
+    .quotes{
+        width: 75%;
+    }
+
+    .title{
+        padding: 3px 7px;
+        font-size: 28px;
+    }
+
+    .quotes__content {
+        font-size: 24px;
+    }
+    
+    .quotes__author {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    .quotes{
+        width: 80%;
+    }
+
+    .title{
+        font-size: 25px;
+    }
+
+    .quotes__content {
+        font-size: 21px;
+    }
+    
+    .quotes__author {
+        font-size: 16px;
+    }
+}
