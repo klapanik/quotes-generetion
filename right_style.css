@@ -12,19 +12,29 @@ body {
     height: 100vh;
 }
 
+/* I have a proposal for you to implement root styles for colors as practical */
+
 .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px;
     justify-content: space-between;
-    min-height: 314px;
+    gap: 20px;
+    width: 90%;
+    max-width: 700px;
 }
 
 .title,
 .quotes {
     border-radius: 10px;
-    padding: 5px 10px;
 }
 
 .title {
@@ -32,6 +42,7 @@ body {
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
+    padding: 5px 10px;
     transition: all 0.6s ease-in-out;
 }
 
@@ -44,13 +55,19 @@ body {
 .quotes {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 15px -3px, rgba(0, 0, 0, 0.2) 0px 4px 6px -5px;
+    width: 100%;
+    padding: 20px;
+    cursor: pointer;
+    height: 200px;
+    transition: box-shadow 0.3s ease-in;
+}
+
+.quotes__main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 35%;
-    min-height: 164px;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease-in;
+    gap: 10px;
+    height: 100%;
 }
 
 .quotes:hover {
@@ -60,14 +77,14 @@ body {
 .quotes__content {
     color: black;
     font-family: "Montez";
-    font-size: 25px;
+    font-size: 30px;
     display: flex;
     align-self: flex-start;
 }
 
 .quotes__author {
     color: rgb(226, 151, 78);
-    font-size: 20px;
+    font-size: 26px;
     font-family: inherit;
     display: flex;
     align-self: flex-end;
@@ -75,26 +92,28 @@ body {
 
 .generate-button {
     background-color: black;
-    font-family: inherit;
-    border-width: 0;
+    border: 0;
+    outline: 0;
     font-size: 20px;
     color: white;
     border-radius: 10px;
     padding: 10px 15px;
-    transition: background-color 0.6s ease-in-out;
+    cursor: pointer;
+    transition-duration: 0.6s;
+    transition-property: background-color;
 }
 
 .generate-button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+    background-color: rgba(156, 151, 151, 0.329);
 }
 
 .loading-quotes {
     display: none;
     border-radius: 10px;
-    background-color: white;
-    width: 35%;
-    min-height: 164px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .loading-quotes__div::after {
@@ -102,7 +121,6 @@ body {
     display: block;
     width: 40px;
     height: 40px;
-    margin: 50px auto;
     border: 2px solid black;
     border-top-color: gray;
     border-radius: 100%;
@@ -120,50 +138,34 @@ body {
     }
 }
 
-@media (max-width: 1000px) {
-    .quotes{
-        width: 51%;
-    }
-}
-
-@media (max-width: 760px) {
-    .quotes{
-        width: 65%;
-    }
-}
-
 @media (max-width: 580px) {
-    .quotes{
-        width: 75%;
-    }
-
-    .title{
+    .title {
         padding: 3px 7px;
         font-size: 28px;
     }
 
-    .quotes__content {
-        font-size: 24px;
+    .quotes {
+        height: 150px;
     }
-    
+
+    .quotes__content {
+        font-size: 22px;
+    }
+
     .quotes__author {
         font-size: 18px;
     }
 }
 
 @media (max-width: 450px) {
-    .quotes{
-        width: 80%;
-    }
-
-    .title{
+    .title {
         font-size: 25px;
     }
 
     .quotes__content {
-        font-size: 21px;
+        font-size: 18px;
     }
-    
+
     .quotes__author {
         font-size: 16px;
     }

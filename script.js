@@ -46,8 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             let counter = Math.floor(Math.random() * quoteList.length)
+            
             quot.innerText = quoteList[counter].quot
             author.innerText = quoteList[counter].name
+
             loadingQuotes.replaceWith(quotesDataContent)
             loadingQuotes.style.display = 'none'
         }, 1500)
